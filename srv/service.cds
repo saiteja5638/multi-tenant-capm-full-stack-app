@@ -3,11 +3,11 @@ using vcp_sales_orders from '../db/schema';
 @path: 'catalog'
 service CatalogService {
   entity LOCATION    as projection on vcp_sales_orders.LOCATION;
-  entity SalesOrders as projection on vcp_sales_orders.SalesOrders;
+  // entity SalesOrders as projection on vcp_sales_orders.SalesOrders;
   entity Products    as projection on vcp_sales_orders.Products;
   entity JOB_LOGS as projection on vcp_sales_orders.JOB_LOGS;
   entity Customers   as projection on vcp_sales_orders.Customers;
-  entity Logs        as projection on vcp_sales_orders.Logs;
+  // entity Logs        as projection on vcp_sales_orders.Logs;
   function call(UserT:String) returns String;
      type DynamicAppLauncher {
         subtitle     : String;
