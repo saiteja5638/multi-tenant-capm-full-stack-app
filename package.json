@@ -1,0 +1,66 @@
+{
+  "name": "vcp_salesorders",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^2.2.0",
+    "@sap/cds": "^9.3.1",
+    "@sap/cds-mtxs": "^3",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/xssec": "^4",
+    "axios": "^1.13.2",
+    "express": "^4",
+    "sqlite3": "^5.1.7"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.13.0",
+    "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": ">=8",
+    "cds-plugin-ui5": "^0.13.0",
+    "mbt": "^1.2.29",
+    "rimraf": "^5.0.5"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-basic1": "cds watch --open basic1/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "undeploy": "cf undeploy vcp_salesorders --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-sampletest": "cds watch --open sampletest/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-locationlist": "cds watch --open locationlist/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-locations": "cds watch --open locations/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana",
+        "pool": {
+          "min": 0,
+          "max": 20,
+          "acquireTimeoutMillis": 60000
+        }
+      },
+      "multitenancy": true,
+      "[local-multitenancy]": {
+        "multitenancy": true
+      }
+    },
+    "profile": "with-mtx-sidecar",
+    "capabilities": [
+      "cds.xt.DeploymentService"
+    ]
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/locationlist"
+  ]
+}

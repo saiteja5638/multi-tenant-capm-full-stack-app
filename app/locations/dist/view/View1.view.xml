@@ -1,0 +1,45 @@
+<mvc:View
+    controllerName="locations.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+    
+        <Table id="_IDGenTable" items="{/items}" >
+        <infoToolbar>
+        <Toolbar id="_IDGenToolbar2" >
+        <Button id="_IDGenButton"  type="Emphasized"  text="Create" press="onOpenLocation"  ></Button>
+        </Toolbar>
+        </infoToolbar>
+            <columns>
+                <Column id="_IDGenColumn" hAlign="Center">
+                    <Title id="_IDGenTitle" text="LOCATION_ID" />
+                </Column>
+                <Column id="_IDGenColumn1" hAlign="Center">
+                    <Title id="_IDGenTitle1" text="LOCATION_DESC" />
+                </Column>
+                <Column id="_IDGenColumn2" hAlign="Center">
+                    <Title id="_IDGenTitle2" text="LOCATION_TYPE" />
+                </Column>
+                <Column id="_IDGenColumn3" hAlign="Center">
+                    <Title id="_IDGenTitle3" text="LONGITUTE" />
+                </Column>
+                <Column id="_IDGenColumn4" hAlign="Center">
+                    <Title id="_IDGenTitle4" text="LATITUDE" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem id="_IDGenColumnListItem1">
+                    <Text id="_IDGenText" text="{LOCATION_ID}" />
+                    <Text id="_IDGenText1" text="{LOCATION_DESC}" />
+                    <Text id="_IDGenText2" text="{LOCATION_TYPE}" />
+                    <Text id="_IDGenText3" text="{LONGITUTE}" />
+                    <Text id="_IDGenText4" text="{LATITUDE}" />
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

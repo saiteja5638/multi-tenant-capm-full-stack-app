@@ -1,0 +1,54 @@
+<core:FragmentDefinition 
+    xmlns="sap.m" 
+    xmlns:core="sap.ui.core"  
+    xmlns:f="sap.ui.layout.form">
+
+    <Dialog id="how"
+        title="Create Location"
+        titleAlignment="Center"
+        contentWidth="30%"
+        contentHeight="auto">
+
+        <f:SimpleForm id="_IDGenSimpleForm"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="1"
+            emptySpanL="1"
+            emptySpanM="1"
+            emptySpanS="0"
+            columnsXL="2"
+            columnsL="2"
+            columnsM="2"
+            singleContainerFullSize="false">
+
+            <Label id="_IDGenLabel" text="Location ID"/>
+            <Input id="inputLocationId" placeholder="Enter Location ID"/>
+
+            <Label id="_IDGenLabel1" text="Location Description"/>
+            <Input id="inputLocationDesc" placeholder="Enter Description"/>
+
+            <Label id="_IDGenLabel2" text="Location Type"/>
+            <Input id="inputLocationType" placeholder="Enter Type"/>
+
+            <Label id="_IDGenLabel3" text="Latitude"/>
+            <Input id="inputLatitude" placeholder="Enter Latitude"/>
+
+            <Label id="_IDGenLabel4" text="Longitude"/>
+            <Input id="inputLongitude" placeholder="Enter Longitude"/>
+        </f:SimpleForm>
+
+        <footer>
+            <Toolbar id="_IDGenToolbar1">
+                <ToolbarSpacer id="_IDGenToolbarSpacer"/>
+                <Button id="btnCreate" type="Accept" text="Create" press="onCreateLocation"/>
+                <Button id="btnClose" type="Reject" text="Close" press="onCloseLocation"/>
+            </Toolbar>
+        </footer>
+
+    </Dialog>
+</core:FragmentDefinition>

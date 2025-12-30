@@ -1,0 +1,11 @@
+GET https://sbpdigital-sbpmonitor-dev-app-saas.cfapps.us10-001.hana.ondemand.com/odata/v4/catalog/Books
+
+
+  "folders": {
+    "srv": "srv",
+    "srv-products": "srv-products"
+  },
+  "profile": "with-mtx-sidecar",
+  "capabilities": [
+    "cds.xt.DeploymentService"
+  ]
